@@ -1,0 +1,52 @@
+{
+    // VS Code 启动配置 - 按 F5 或点击侧边栏 "运行和调试" 一键启动
+    // 可用配置:
+    //   🚀 启动 FastAPI (开发模式)    - 热重载，改代码自动刷新
+    //   🚀 启动 FastAPI (生产模式)    - 多进程，无热重载
+    //   📜 运行 start.sh              - 运行项目已有的启动脚本
+    //   🐍 运行当前 Python 文件       - 运行当前打开的 .py 文件
+
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "🚀 启动 FastAPI (开发模式)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "main:app",
+                "--host", "0.0.0.0",
+                "--port", "8000",
+                "--reload",
+                "--reload-dir", "${workspaceFolder}"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "ENV": "development"
+            },
+            "justMyCode": false
+        },
+        {
+            "name": "🚀 启动 FastAPI (生产模式)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "main:app",
+                "--host", "0.0.0.0",
+                "--port", "8000",
+                "--workers", "4"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "ENV": "production"
+            },
+            "justMyCode": false
+        },
+
+    ]
+}

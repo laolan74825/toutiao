@@ -1,0 +1,33 @@
+// =============================================================================
+// VS Code: 工作区配置 - toutiao_backend2 项目 (WSL Ubuntu-24.04)
+// 工具链: uv（无需手动激活虚拟环境）
+// =============================================================================
+
+{
+  // Python 解释器（Pylance / Debug 必需）
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+
+  // 终端默认 shell
+  "terminal.integrated.defaultProfile.linux": "bash",
+
+  // Pylance 语言服务器
+  "python.languageServer": "Pylance",
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.completeFunctionParens": true,
+
+  // 编辑器
+  "editor.formatOnSave": true,
+  "editor.rulers": [88, 120],
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true
+  },
+  "search.exclude": {
+    "**/.venv": true,
+    "**/__pycache__": true
+  }
+}
